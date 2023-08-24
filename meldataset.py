@@ -73,13 +73,13 @@ def mel_spectrogram(y, n_fft, num_mels, sampling_rate, hop_size, win_size, fmin,
 
 
 def get_dataset_filelist(a):
-    with open(a.input_training_file, 'r', encoding='utf-8') as fi:
-        training_files = [os.path.join(a.input_wavs_dir, x.split('|')[0])
-                          for x in fi.read().split('\n') if len(x) > 0]
-
-    with open(a.input_validation_file, 'r', encoding='utf-8') as fi:
-        validation_files = [os.path.join(a.input_wavs_dir, x.split('|')[0])
-                            for x in fi.read().split('\n') if len(x) > 0]
+    input_wavs_dir='/kaggle/working/hifi-gan/ft_dataset'
+    with open('/kaggle/working/hifi-gan/training.txt', 'r', encoding='utf-8') as fi:    
+        training_files = [os.path.join(input_wavs_dir, x.split('|')[0])
+                          for x in fi.read().split('\n') if len(x) > 0])
+    with open('/kaggle/working/hifi-gan/validation.txt', 'r', encoding='utf-8') as fi:    
+        validation_files = [os.path.join(input_wavs_dir, x.split('|')[0])
+                          for x in fi.read().split('\n') if len(x) > 0])
     return training_files, validation_files
 
 
