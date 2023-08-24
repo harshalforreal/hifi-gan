@@ -76,10 +76,10 @@ def get_dataset_filelist(a):
     input_wavs_dir='/kaggle/working/hifi-gan/ft_dataset'
     with open('/kaggle/working/hifi-gan/training.txt', 'r', encoding='utf-8') as fi:    
         training_files = [os.path.join(input_wavs_dir, x.split('|')[0])
-                              for x in fi.read().split('\n') if len(x) > 0])
+                              for x in fi.read().split('\n') if len(x) > 0]
     with open('/kaggle/working/hifi-gan/validation.txt', 'r', encoding='utf-8') as fi:    
         validation_files = [os.path.join(input_wavs_dir, x.split('|')[0])
-                              for x in fi.read().split('\n') if len(x) > 0])
+                              for x in fi.read().split('\n') if len(x) > 0]
     return training_files, validation_files
 
 
